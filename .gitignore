@@ -2,3 +2,4 @@
 .venv/
 5. yolo/fine-a-red-hat/runs/
 6. Image classification/.ipynb_checkpoints/
+*/__pycache__/
