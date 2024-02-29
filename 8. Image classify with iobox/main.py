@@ -65,6 +65,7 @@ while cap.isOpened():
             train()
 
         if key == ord("0"):
+            t1 = datetime.now()
             model = models.load_model('model_name.h5')
             x1, y1, x2, y2 = d[f'{model_name}']['xyxy']
             img = img[y1:y2, x1:x2]
@@ -72,8 +73,10 @@ while cap.isOpened():
             img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             with open('class_names.json') as f:
                 class_name = json.loads(f.read())
+            t2 = datetime.now()
             res = predict(model, img, class_name)
-            print(res)
+            t3 = datetime.now()
+            print(res,(t2-t1).total_seconds(),(t3-t2).total_seconds())
         if key == ord("."):
             cv2.destroyAllWindows()
             train()
