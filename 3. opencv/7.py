@@ -18,8 +18,3 @@ print(p2)
 #
 # r1 = Rect(p1, p2)
 # print(r1)
-
-
-c = 10+5j
-print(c.real)
-print(c.imag)
