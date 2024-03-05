@@ -1,11 +1,11 @@
-BLACK = '\033[90m'
-RED = '\033[91m'
-GREEN = '\033[92m'
-YELLOW = '\033[93m'
-BLUE = '\033[94m'
-PINK = '\033[95m'
-CYAN = '\033[96m'
-ENDC = '\033[0m'
-BOLD = '\033[1m'
-ITALICIZED = '\033[3m'
-UNDERLINE = '\033[4m'
+import numpy as np
+
+array = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+array = np.transpose(array)
+print(array)
+# [[1 4 7]
+#  [2 5 8]
+#  [3 6 9]]
