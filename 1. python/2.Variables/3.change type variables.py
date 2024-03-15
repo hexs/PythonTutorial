@@ -7,4 +7,5 @@ print(x)
 print(type(x))
 
 # todo
-#  ให้ใช้ X แทน x
+#  ให้ใช้ X แทน x ในบรรทัดที่ 6,7
+#  และ print(x,X)
