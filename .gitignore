@@ -1,0 +1,7 @@
+.idea/
+.venv/
+**/__pycache__/**
+
+5. yolo/fine-a-red-hat
+5. yolo/fine-a-red-hat/runs/
+6. Image classification/download dataset.py
