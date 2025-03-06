@@ -1,9 +1,8 @@
-import json
-from hexss import check_packages
+from hexss import check_packages, json_load
 
 check_packages(
     'tensorflow', 'opencv-python',
-    auto_install=True, verbose=False,
+    auto_install=True,
 )
 
 import cv2
@@ -22,10 +21,11 @@ def predict(model, img_array, class_name):
 
 
 model = models.load_model('model_name.h5')
-img = cv2.cvtColor(cv2.resize(cv2.imread('1.jpg'), (180, 180)), cv2.COLOR_BGR2RGB)
-img = np.expand_dims(img, axis=0)
-with open('class_names.json') as f:
-    class_name = json.loads(f.read())
+class_names = json_load('class_names.json')['class_names']
 
-res = predict(model, img, class_name)
+img = cv2.imread('flower_photos/sunflowers/44079668_34dfee3da1_n.jpg')
+img = cv2.cvtColor(cv2.resize(img, (180, 180)), cv2.COLOR_BGR2RGB)
+img = np.expand_dims(img, axis=0)
+
+res = predict(model, img, class_names)
 print(res)

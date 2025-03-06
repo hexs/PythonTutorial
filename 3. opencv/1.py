@@ -2,7 +2,7 @@ from hexss import check_packages
 
 check_packages(
     'opencv-python',
-    auto_install=True, verbose=False,
+    auto_install=True,
 )
 
 import numpy as np

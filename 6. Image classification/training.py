@@ -1,10 +1,10 @@
 import os
 import pathlib
-from hexss import check_packages
+from hexss import check_packages, json_update
 
 check_packages(
     'matplotlib', 'tensorflow',
-    auto_install=True, verbose=False,
+    auto_install=True,
 )
 
 import matplotlib.pyplot as plt
@@ -29,6 +29,7 @@ train_ds, val_ds = tf.keras.utils.image_dataset_from_directory(
     batch_size=batch_size)
 
 class_names = train_ds.class_names
+json_update('class_names.json', {'class_names': class_names})
 
 AUTOTUNE = tf.data.AUTOTUNE
 
@@ -94,4 +95,3 @@ plt.plot(epochs_range, val_loss, label='Validation Loss')
 plt.legend(loc='upper right')
 plt.title('Training and Validation Loss')
 plt.show()
-

@@ -3,6 +3,7 @@
 **/__pycache__/**
 
 5. yolo/fine-a-red-hat
-5. yolo/fine-a-red-hat/runs/
-6. Image classification/flower_photos
-6. Image classification/download dataset.py
+6. Image classification/flower_photos/
+6. Image classification/pet_photos/
+6. Image classification/class_names.json
+*.h5
