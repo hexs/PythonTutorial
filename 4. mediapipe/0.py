@@ -1,4 +1,10 @@
 import random
+from hexss import check_packages
+
+check_packages(
+    'opencv-python', 'cvzone',
+    auto_install=True,
+)
 
 import cv2
 import cvzone
@@ -10,7 +16,7 @@ cap = cv2.VideoCapture(0)
 r = 0
 g = 0
 b = 0
-img2 = cv2.imread('img.png',cv2.IMREAD_UNCHANGED)
+img2 = cv2.imread('img.png', cv2.IMREAD_UNCHANGED)
 print(img2.shape)
 img2 = cv2.resize(img2, (300, 300))
 while True:
